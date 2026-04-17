@@ -1,0 +1,46 @@
+# Sensor sınıfı oluşturuyoruz
+class Sensor:
+    def __init__(self, sensor_adi):
+        self.sensor_adi = sensor_adi
+        self.okunan_deger = 0  # başlangıç değeri 0 atadım
+
+    def deger_guncelle(self, yeni_deger):
+        self.okunan_deger = yeni_deger
+
+    def kontrol_et(self):
+        if self.okunan_deger < 10:
+            return f"{self.sensor_adi}: Engel algılandı!" 
+        else:
+            return f"{self.sensor_adi}: Yol açık."
+
+
+# Liste alan ve sonuç döndüren fonksiyon
+def sensorleri_kontrol_et(sensor_listesi):
+    sonuc_listesi = [] # boş bir sonuc_listesi oluşturdum
+
+    for sensor in sensor_listesi:
+        sonuc = sensor.kontrol_et()
+        sonuc_listesi.append(sonuc) # sonuc_listesi ne ekledim
+
+    return sonuc_listesi
+
+
+# Kullanım için örnek oluşturdum.
+s1 = Sensor("Ön Sensör")
+s2 = Sensor("Arka Sensör")
+s3 = Sensor("Yan Sensör")
+
+# Değerleri güncelledim
+s1.deger_guncelle(5)
+s2.deger_guncelle(18)
+s3.deger_guncelle(8)
+
+# Liste oluşturdum
+sensorler = [s1, s2, s3]
+
+# Kontrol yaptım
+sonuclar = sensorleri_kontrol_et(sensorler)
+
+# Sonuçları yazdırdım
+for s in sonuclar:
+    print(s)
