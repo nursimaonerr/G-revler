@@ -8,20 +8,20 @@ def empty(a):
 cv2.namedWindow("Ayarlar")
 cv2.resizeWindow("Ayarlar", 400, 650)
 
-# Renk filtreleme (HSV) için trackbar'lar (Görseldeki varsayılan değerlerle)
+# Renk filtreleme (HSV) için trackbar'lar 
 cv2.createTrackbar("H_Low", "Ayarlar", 0, 179, empty)
 cv2.createTrackbar("H_High", "Ayarlar", 24, 179, empty)
 cv2.createTrackbar("S_Low", "Ayarlar", 65, 255, empty)
 cv2.createTrackbar("S_High", "Ayarlar", 255, 255, empty)
 cv2.createTrackbar("V_Low", "Ayarlar", 37, 255, empty)
 cv2.createTrackbar("V_High", "Ayarlar", 180, 255, empty)
-
+    
 # Görüntü işleme filtreleri için trackbar'lar
 cv2.createTrackbar("Blur", "Ayarlar", 9, 50, empty)
 cv2.createTrackbar("Acilma", "Ayarlar", 30, 100, empty)
 cv2.createTrackbar("Min_Alan", "Ayarlar", 5257, 20000, empty)
 
-# Para boyutlarını (Yarıçap - Radius) belirlemek için trackbar'lar
+# Para boyutlarını  belirlemek için trackbar'lar
 cv2.createTrackbar("R_1TL", "Ayarlar", 95, 150, empty)
 cv2.createTrackbar("R_50Kr", "Ayarlar", 91, 150, empty)
 cv2.createTrackbar("R_25Kr", "Ayarlar", 76, 150, empty)
